@@ -22,7 +22,6 @@ export default function Alteracao() {
         paginas: dado.paginas,
         data: dado.data,
         autor: dado.autor,
-        // artista: dado.artista,
         capa: dado.capa,
         sinopse: dado.sinopse,
         destaque: dado.destaque        

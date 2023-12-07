@@ -33,17 +33,17 @@ export const livroDestaca = async (req, res) => {
 }
 
 export const livroCreate = async (req, res) => {
-  const { titulo, genero, preco, duracao, data, classif, artista, capa, sinopse } = req.body
+  const { titulo, genero, preco, paginas, data, autor, capa, sinopse } = req.body
 
   // se não informou estes atributos
-  if (!titulo || !genero || !preco || !duracao || !data || !classif || !artista || !capa || !sinopse) {
+  if (!titulo || !genero || !preco || !paginas|| !data || !autor || !capa || !sinopse) {
     res.status(400).json({ id: 0, msg: "Erro... Informe os dados" })
     return
   }
 
   try {
     const livro = await Livro.create({
-      titulo, genero, preco, duracao, data, classif, artista, capa, sinopse
+      titulo, genero, preco, paginas, data, autor, capa, sinopse 
     });
     res.status(201).json(livro)
   } catch (error) {
